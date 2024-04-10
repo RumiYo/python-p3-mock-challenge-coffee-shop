@@ -134,14 +134,14 @@ class TestCustomer:
         assert order_2.coffee == coffee_2
         
         
-    # def test_most_aficionado(self):
-    #     """the customer who has spent the most on the coffee instance provided."""
-    #     coffee = Coffee("Vanilla Latte")
-    #     steve = Customer("Steve")
-    #     dima = Customer("Dima")
-    #     Order(steve, coffee, 2.0)
-    #     Order(steve, coffee, 4)
-    #     Order(dima, coffee, 5.0)
-    #     Order(dima, coffee, 2.0)
+    def test_most_aficionado(self):
+        """the customer who has spent the most on the coffee instance provided."""
+        coffee = Coffee("Vanilla Latte")
+        steve = Customer("Steve")
+        dima = Customer("Dima")
+        Order(steve, coffee, 2.0)
+        Order(steve, coffee, 4)
+        Order(dima, coffee, 5.0)
+        Order(dima, coffee, 2.0)
         
-    #     assert (Customer.most_aficionado(coffee) == dima)
+        assert (Customer.most_aficionado(coffee) == dima)
