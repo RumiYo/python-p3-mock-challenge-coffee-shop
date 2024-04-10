@@ -11,7 +11,10 @@ class Coffee:
         if not hasattr(self, 'name'):
             if isinstance(name, str) and len(name) >= 3:
                 self._name = name
-        
+            else:
+                raise TypeError("coffee name must be a string")
+        else:
+            raise TypeError("coffee name is is not be able to change")
         
     def orders(self):
         return [order for order in Order.all if order.coffee == self]
@@ -48,6 +51,10 @@ class Customer:
         if isinstance(name, str):
             if len(name)>=1 and len(name)<=15:
                 self._name = name
+            else:
+                raise TypeError("the length of name must be between 1 and 15")
+        else:
+            raise TypeError("name must be a string")
 
     def orders(self):
         return [order for order in Order.all if order.customer == self]
@@ -112,3 +119,7 @@ class Order:
             if isinstance(price, float) or isinstance(price, int):
                 if price >= 1 and price <= 10: 
                     self._price = price 
+                else:
+                    raise TypeError ("price must be between 1 and 10")
+        else:
+            raise TypeError("price is immutable")
